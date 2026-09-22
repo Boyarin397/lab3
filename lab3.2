@@ -1,1 +1,24 @@
+import math 
+a = -0.1
+b = 0.7
+h = 0.05
+print("-" * 30)
+print(f"{'x':^10} | {'y':^15}")
+print("-" * 30)
+n_steps = int(round((b - a) / h)) + 1
+for i in range(n_steps):
+    x = a + i * h
+    try:
+        term1 = math.sin(x**(1/x))
+        term2 = 2 * (x ** 2)
+        term3 = (3 ** x) * math.sin(3 * x)
 
+        y = term1 - term2 + term3
+        print(f"{x:10.2f} | {y:15.5f}")
+    except ZeroDivisionError:
+        print(f"{x:10.2f} | {'Ошибка (деление на 0)':^15}")
+    except ValueError:
+        print(f"{x:10.2f} | {'Ошибка (недопустимое значение)':^15}")
+print("-" * 30)        
+        
+        
