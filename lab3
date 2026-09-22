@@ -1,0 +1,9 @@
+import math
+x = 1.5
+numerator = 2 * (x**2) - 4
+denominator = math.exp(-2 * x) - math.tan(1 - 2**x)
+fraction = numerator / denominator
+arcsin_arg = 2 * x - math.sqrt(1 + 2 * x)
+arcsin_part = math.asin(arcsin_arg)
+y = fraction + arcsin_part
+print(f"Значение функции y = {y:.5f}")
